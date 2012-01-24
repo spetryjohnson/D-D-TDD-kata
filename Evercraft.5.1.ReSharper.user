@@ -1,0 +1,203 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:AlignmentEnum.cs" caret="201" fromTop="11" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:GlobalSteps.cs" caret="0" fromTop="0" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:Attribute.cs" caret="156" fromTop="9" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:StepsBase.cs" caret="409" fromTop="10" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character1.feature.cs" caret="8656" fromTop="10" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character.feature" caret="2349" fromTop="13" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="3867" fromTop="12" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Combat.feature.cs" caret="7687" fromTop="14" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Combat.feature" caret="1555" fromTop="7" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="711" fromTop="12" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CombatSteps.cs" caret="964" fromTop="8" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="897" fromTop="31" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="3104" fromTop="21" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="1537" fromTop="13" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="3102" fromTop="20" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="1159" fromTop="8" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="1151" fromTop="8" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character.feature" caret="1140" fromTop="12" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="2782" fromTop="14" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="1548" fromTop="16" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="1885" fromTop="12" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character.feature" caret="1923" fromTop="14" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character.feature" caret="1595" fromTop="12" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="1335" fromTop="11" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="1681" fromTop="4" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="3380" fromTop="5" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="2477" fromTop="18" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="2284" fromTop="7" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character.feature" caret="2229" fromTop="6" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="1335" fromTop="15" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="254" fromTop="7" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character.feature" caret="819" fromTop="10" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="2428" fromTop="8" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="730" fromTop="10" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="634" fromTop="13" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="619" fromTop="12" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="3983" fromTop="13" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/f:Character.feature" caret="2426" fromTop="15" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CharacterSteps.cs" caret="3965" fromTop="13" />
+      <File id="BEDCA587-0AD2-4148-94B5-EB48328804CD/f:EvercraftCharacter.cs" caret="552" fromTop="6" />
+      <File id="E08B7D4C-EE0B-4D9B-81AF-A69DF1C66AD7/d:Steps/f:CombatSteps.cs" caret="877" fromTop="7" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="EvercraftCharacter" priority="1" />
+      <Item value="Alignment`0" priority="1" />
+      <Item value="string" priority="2" />
+      <Item value="expectedAlignment" priority="2" />
+      <Item value="Enum`0" priority="1" />
+      <Item value="typeof" priority="0" />
+      <Item value="alignmentEnum" priority="0" />
+      <Item value="int" priority="16" />
+      <Item value="Assert`0" priority="10" />
+      <Item value="Is`0" priority="9" />
+      <Item value="public" priority="3" />
+      <Item value="Evercraft_Character`0" priority="4" />
+      <Item value="ArmorClass" priority="0" />
+      <Item value="const" priority="0" />
+      <Item value="DEFAULT_AC" priority="0" />
+      <Item value="Character" priority="12" />
+      <Item value="expectedArmorClass" priority="0" />
+      <Item value="HitPoints" priority="4" />
+      <Item value="EnvironmentVariableTarget`0" priority="0" />
+      <Item value="bool" priority="1" />
+      <Item value="AttackResult" priority="2" />
+      <Item value="StepsBase`0" priority="2" />
+      <Item value="attackAmount" priority="0" />
+      <Item value="armorClassAgainst" priority="2" />
+      <Item value="Convert`0" priority="0" />
+      <Item value="if" priority="13" />
+      <Item value="expectedAttackResult" priority="4" />
+      <Item value="var" priority="9" />
+      <Item value="expectedResult" priority="1" />
+      <Item value="true" priority="1" />
+      <Item value="throw" priority="0" />
+      <Item value="new" priority="5" />
+      <Item value="ArgumentException" priority="0" />
+      <Item value="return" priority="12" />
+      <Item value="ScenarioContext`0" priority="4" />
+      <Item value="attackRoll" priority="4" />
+      <Item value="false" priority="0" />
+      <Item value="Char`0" priority="1" />
+      <Item value="hitPoints" priority="0" />
+      <Item value="char" priority="1" />
+      <Item value="private" priority="1" />
+      <Item value="OpponentCharacter" priority="0" />
+      <Item value="Evercraft_Character" priority="0" />
+      <Item value="Opponent" priority="8" />
+      <Item value="damageAmount" priority="6" />
+      <Item value="OpponentOriginalHP" priority="2" />
+      <Item value="character" priority="0" />
+      <Item value="opponent" priority="1" />
+      <Item value="success" priority="0" />
+      <Item value="isNatural20" priority="1" />
+      <Item value="isCriticalHit" priority="0" />
+      <Item value="else" priority="1" />
+      <Item value="expectedValue" priority="0" />
+      <Item value="Strength" priority="1" />
+      <Item value="Charisma" priority="0" />
+      <Item value="Wisdom" priority="0" />
+      <Item value="Constitution" priority="0" />
+      <Item value="Intelligence" priority="0" />
+      <Item value="Dexterity" priority="0" />
+      <Item value="ValueType`0" priority="0" />
+      <Item value="Attributes" priority="6" />
+      <Item value="try" priority="0" />
+      <Item value="protected" priority="0" />
+      <Item value="Exception" priority="2" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="ThrownException" priority="1" />
+      <Item value="ArgumentOutOfRangeException`0" priority="0" />
+      <Item value="Attribute`0" priority="1" />
+      <Item value="Dictionary&lt;Attribute,int&gt;" priority="0" />
+      <Item value="Attribute" priority="7" />
+      <Item value="attributeName" priority="0" />
+      <Item value="attributeEnum" priority="1" />
+      <Item value="void" priority="0" />
+      <Item value="SetAttribute`0" priority="0" />
+      <Item value="value" priority="2" />
+      <Item value="ArgumentOutOfRangeException" priority="0" />
+      <Item value="attribute" priority="1" />
+      <Item value="attributeValue" priority="0" />
+      <Item value="result" priority="0" />
+      <Item value="expectedModifier" priority="0" />
+      <Item value="GetAttribute`0" priority="0" />
+      <Item value="attrValue" priority="2" />
+      <Item value="Math`0" priority="0" />
+      <Item value="ToEven" priority="0" />
+      <Item value="decimal" priority="0" />
+      <Item value="ICustomFormatter`0" priority="0" />
+      <Item value="base" priority="0" />
+      <Item value="dexterity" priority="0" />
+      <Item value="dexterityMod" priority="1" />
+      <Item value="BaseArmorClass" priority="0" />
+      <Item value="CalculateModifier`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Evercraft_model.Evercraft_Character">
+      <Item value="Alignment" priority="0" />
+      <Item value="HitPoints" priority="3" />
+      <Item value="Attack`0" priority="0" />
+      <Item value="ArmorClass" priority="3" />
+      <Item value="TakeDamage`0" priority="0" />
+      <Item value="Strength" priority="0" />
+      <Item value="Attributes" priority="1" />
+      <Item value="SetAttribute`0" priority="2" />
+      <Item value="CalculateModifier`0" priority="0" />
+      <Item value="BaseArmorClass" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Enum">
+      <Item value="Parse`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="That`0" priority="7" />
+      <Item value="Inconclusive`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Is">
+      <Item value="EqualTo`0" priority="7" />
+      <Item value="True" priority="0" />
+      <Item value="InstanceOf`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@TechTalk.SpecFlow.ScenarioContext">
+      <Item value="Current" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TechTalk.SpecFlow.ScenarioContext">
+      <Item value="Get`1" priority="1" />
+      <Item value="Set`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Evercraft_model.Attribute">
+      <Item value="Strength" priority="4" />
+      <Item value="Dexterity" priority="4" />
+      <Item value="Constitution" priority="1" />
+      <Item value="Wisdom" priority="1" />
+      <Item value="Intelligence" priority="1" />
+      <Item value="Charisma" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Round`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

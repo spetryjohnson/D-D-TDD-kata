@@ -1,0 +1,10 @@
+C:\GitRepositories\Evercraft_Kata\Evercraft\Evercraft_model\bin\Debug\Evercraft_model.dll
+C:\GitRepositories\Evercraft_Kata\Evercraft\Evercraft_model\bin\Debug\Evercraft_model.pdb
+C:\GitRepositories\Evercraft_Kata\Evercraft\Evercraft_model\obj\Debug\ResolveAssemblyReference.cache
+C:\GitRepositories\Evercraft_Kata\Evercraft\Evercraft_model\obj\Debug\Evercraft_model.dll
+C:\GitRepositories\Evercraft_Kata\Evercraft\Evercraft_model\obj\Debug\Evercraft_model.pdb
+C:\work\Evercraft\Evercraft_model\bin\Debug\Evercraft_model.dll
+C:\work\Evercraft\Evercraft_model\bin\Debug\Evercraft_model.pdb
+C:\work\Evercraft\Evercraft_model\obj\Debug\ResolveAssemblyReference.cache
+C:\work\Evercraft\Evercraft_model\obj\Debug\Evercraft_model.dll
+C:\work\Evercraft\Evercraft_model\obj\Debug\Evercraft_model.pdb
