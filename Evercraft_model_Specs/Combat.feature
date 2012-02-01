@@ -34,7 +34,7 @@ Scenario: Attacks that roll a natural 20 do double damage to the defender
 	Then the defender takes 2 points of damage
 
 
-Scenario: Characters die when their hit points are equal to or less than zero
+Scenario: Characters die when their Effective Hit Points are equal to or less than zero
 	Given two Characters are ready for combat
 	And the defender has 1 hit point
 	When an attack is successful

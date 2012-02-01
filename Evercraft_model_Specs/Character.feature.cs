@@ -19,20 +19,20 @@ namespace Evercraft_model_Specs
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.8.1.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CharacterCreation")]
-    public partial class CharacterCreationFeature
+    [NUnit.Framework.DescriptionAttribute("Character")]
+    public partial class CharacterFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CharacterCreation.feature"
+#line 1 "Character.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CharacterCreation", "In order to play the game\r\nAs a player\r\nI want to be able to create a new charact" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Character", "In order to play the game\r\nAs a player\r\nI want to be able to create a new charact" +
                     "er", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -73,7 +73,7 @@ namespace Evercraft_model_Specs
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 8
  testRunner.When("I name it \"Funny Ass Name\"");
 #line 9
@@ -90,7 +90,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 13
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 15
  testRunner.When("I give it an alignment of \"Evil\"");
 #line 16
@@ -115,9 +115,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 25
 this.ScenarioSetup(scenarioInfo);
 #line 26
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 27
- testRunner.Then("the Hit Points should be 5");
+ testRunner.Then("the Base Hit Points should be 5");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -130,7 +130,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 30
 this.ScenarioSetup(scenarioInfo);
 #line 31
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 32
  testRunner.Then("the Armor Class should be 10");
 #line hidden
@@ -145,7 +145,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 35
 this.ScenarioSetup(scenarioInfo);
 #line 36
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 37
  testRunner.Then("the Strength attribute should be 10");
 #line 38
@@ -170,7 +170,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 45
 this.ScenarioSetup(scenarioInfo);
 #line 46
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 47
  testRunner.When("I give it a Strength attribute of 9");
 #line 48
@@ -191,7 +191,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 53
 this.ScenarioSetup(scenarioInfo);
 #line 54
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 55
  testRunner.Then("the system should not let me enter an attribute less than 1");
 #line 56
@@ -208,7 +208,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 59
 this.ScenarioSetup(scenarioInfo);
 #line 60
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 61
  testRunner.Then("an attribute value of 1 should have a modifier of -5");
 #line 62
@@ -263,18 +263,54 @@ this.ScenarioSetup(scenarioInfo);
 #line 83
 this.ScenarioSetup(scenarioInfo);
 #line 84
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 85
  testRunner.Then("the Effective Armor Class equals the base Armor Class plus the Dexterity modifier" +
                     "");
 #line 87
- testRunner.Given("I am creating a new character");
+ testRunner.Given("I have created a new character");
 #line 88
  testRunner.And("the Base Armor Class is 5");
 #line 89
  testRunner.And("the Dexterity modifier is 5");
 #line 90
  testRunner.Then("the Effective Armor Class should be 10");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The Effective Hit Points are calculated by adding the Constitution modifier to hi" +
+            "t points")]
+        public virtual void TheEffectiveHitPointsAreCalculatedByAddingTheConstitutionModifierToHitPoints()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Effective Hit Points are calculated by adding the Constitution modifier to hi" +
+                    "t points", ((string[])(null)));
+#line 93
+this.ScenarioSetup(scenarioInfo);
+#line 97
+ testRunner.Given("I have created a new character");
+#line 98
+ testRunner.Then("the Effective Hit Points equal the base Hit Points plus the Constitution modifier" +
+                    "");
+#line 100
+ testRunner.Given("I have created a new character");
+#line 101
+ testRunner.And("the Base Hit Points are 5");
+#line 102
+ testRunner.And("the Constitution modifier is -5");
+#line 103
+ testRunner.Then("the Effective Hit Points should be 1");
+#line 105
+ testRunner.Given("I have created a new character");
+#line 106
+ testRunner.And("the Base Hit Points are 5");
+#line 107
+ testRunner.And("the Constitution modifier is -5");
+#line 108
+ testRunner.And("the character has taken 1 points of damage");
+#line 109
+ testRunner.Then("the Effective Hit Points should be 0");
 #line hidden
             this.ScenarioCleanup();
         }

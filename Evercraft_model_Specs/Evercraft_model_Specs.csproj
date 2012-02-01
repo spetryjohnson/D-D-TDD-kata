@@ -67,10 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharacterCreation.feature.cs">
+    <Compile Include="Character.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CharacterCreation.feature</DependentUpon>
+      <DependentUpon>Character.feature</DependentUpon>
     </Compile>
     <Compile Include="Combat.feature.cs">
       <AutoGen>True</AutoGen>
@@ -78,16 +78,16 @@
       <DependentUpon>Combat.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\CharacterCreationSteps.cs" />
+    <Compile Include="Steps\CharacterSteps.cs" />
     <Compile Include="Steps\CombatSteps.cs" />
     <Compile Include="Steps\GlobalSteps.cs" />
     <Compile Include="Steps\StepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="CharacterCreation.feature">
+    <None Include="Character.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CharacterCreation.feature.cs</LastGenOutput>
+      <LastGenOutput>Character.feature.cs</LastGenOutput>
     </None>
     <None Include="Combat.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

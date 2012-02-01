@@ -4,10 +4,41 @@ using System.Collections.Generic;
 namespace Evercraft_model {
 	public class Character {
 		public const int DEFAULT_AC = 10;
+		public const int DEFAULT_HP = 5;
 
 		public string Name { get; set; }
 		public Alignment Alignment { get; set; }
-		public int HitPoints { get; set; }
+		
+		/// <summary>
+		/// The character's base hit points before factoring in bonuses/penalties. 
+		/// </summary>
+		public int BaseHitPoints { get; set; }
+
+		/// <summary>
+		/// How much damage has been taken.
+		/// </summary>
+		public int DamageTaken { get; protected set; }
+
+		/// <summary>
+		/// The base Hit Points, plus any modifications from bonuses/penalties, minus damage taken. The character
+		/// dies when this reaches 0.
+		/// </summary>
+		public int EffectiveHitPoints {
+			get {
+				var effectiveHP = BaseHitPoints + GetModifier(Attribute.Constitution) - DamageTaken;
+
+				// can't die from modifiers alone
+				if (DamageTaken == 0 && effectiveHP <= 0)
+					effectiveHP = 1;
+
+				// dead is dead; no sense in allowing negatives
+				if (effectiveHP < 0)
+					effectiveHP = 0;
+
+				return effectiveHP;
+			}
+		}
+		
 		public Dictionary<Attribute, int> Attributes { get; set; }
 
 		/// <summary>
@@ -23,12 +54,12 @@ namespace Evercraft_model {
 		}
 
 		public bool IsDead {
-			get { return HitPoints <= 0; }
+			get { return EffectiveHitPoints <= 0; }
 		}
 
 		public Character() {
 			BaseArmorClass = DEFAULT_AC;
-			HitPoints = 5;
+			BaseHitPoints = DEFAULT_HP;
 
 			Attributes = new Dictionary<Attribute, int>();
 			SetAttribute(Attribute.Strength, 10);
@@ -70,9 +101,10 @@ namespace Evercraft_model {
 			Attributes[attribute] = value;
 		}
 
-		private void TakeDamage(bool isCriticalHit) {
+		public void TakeDamage(bool isCriticalHit = false) {
 			var damageAmount = isCriticalHit ? 2 : 1;
-			HitPoints -= damageAmount;
+
+			DamageTaken += damageAmount;
 		}
 	}
 }

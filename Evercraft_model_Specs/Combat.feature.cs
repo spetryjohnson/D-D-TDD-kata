@@ -144,10 +144,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Characters die when their hit points are equal to or less than zero")]
-        public virtual void CharactersDieWhenTheirHitPointsAreEqualToOrLessThanZero()
+        [NUnit.Framework.DescriptionAttribute("Characters die when their Effective Hit Points are equal to or less than zero")]
+        public virtual void CharactersDieWhenTheirEffectiveHitPointsAreEqualToOrLessThanZero()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Characters die when their hit points are equal to or less than zero", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Characters die when their Effective Hit Points are equal to or less than zero", ((string[])(null)));
 #line 37
 this.ScenarioSetup(scenarioInfo);
 #line 38

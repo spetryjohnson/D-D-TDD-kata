@@ -9,16 +9,21 @@ using Attribute = Evercraft_model.Attribute;
 namespace Evercraft_model_Specs.Steps {
 
 	[Binding]
-	public class CharacterCreationSteps : StepsBase {
+	public class CharacterSteps : StepsBase {
 
 		protected Character Character {
 			get { return ScenarioContext.Current.Get<Character>(); }
 			set { ScenarioContext.Current.Set(value); }
 		}
 
-		[Given(@"I am creating a new character")]
-		public void Given_I_am_creating_a_new_character() {
+		[Given(@"I have created a new character")]
+		public void Given_I_have_created_a_new_character() {
 			Character = MockRepository.GeneratePartialMock<Character>();
+		}
+
+		[Given(@"the Base Hit Points are (\d+)")]
+		public void GivenTheBaseHitPointsAre5(int baseHP) {
+			Character.BaseHitPoints = baseHP;
 		}
 
 		[Given(@"the Base Armor Class is (\d+)")]
@@ -31,6 +36,13 @@ namespace Evercraft_model_Specs.Steps {
 			Character
 				.Stub(x => x.GetModifier(attribute.ToEnum<Attribute>()))
 				.Return(modifier);
+		}
+		
+		[Given(@"the character has taken (\d+) points of damage")]
+		public void Given_the_character_has_taken_damage(int damageTaken) {
+			for (var i = 0; i < damageTaken; i++) {
+				Character.TakeDamage();
+			}
 		}
 
 		[When(@"I name it ""(.*)""")]
@@ -58,9 +70,14 @@ namespace Evercraft_model_Specs.Steps {
 			Assert.That(Character.Alignment, Is.EqualTo(alignment.ToEnum<Alignment>()));
 		}
 
-		[Then(@"the Hit Points should be (\d+)")]
-		public void Then_the_Hit_Points_should_be(int hitPoints) {
-			Assert.That(Character.HitPoints, Is.EqualTo(hitPoints));
+		[Then(@"the Base Hit Points should be (\d+)")]
+		public void Then_the_Base_Hit_Points_should_be(int hitPoints) {
+			Assert.That(Character.BaseHitPoints, Is.EqualTo(hitPoints));
+		}
+
+		[Then(@"the Effective Hit Points should be (-?\d+)")]
+		public void Then_the_Effective_Hit_Points_should_be(int hitPoints) {
+			Assert.That(Character.EffectiveHitPoints, Is.EqualTo(hitPoints), "Incorrect Effective HP");
 		}
 
 		[Then(@"the Armor Class should be (\d+)")]
@@ -139,6 +156,29 @@ namespace Evercraft_model_Specs.Steps {
 			Character.SetAttribute(DEXTERITY, 20);
 			Assert.That(Character.EffectiveArmorClass, Is.EqualTo(Character.BaseArmorClass + Character.GetModifier(DEXTERITY))
 				, "Incorrect effective armor class with a positive dexterity modifier."
+			);
+		}
+
+		[Then(@"the Effective Hit Points equal the base Hit Points plus the Constitution modifier")]
+		public void Then_the_Effective_Hit_Points_equal_the_base_Hit_Points_plus_the_Constitution_modifier() {
+			var CONSTITUTION = Attribute.Constitution;
+
+			// test with a negative modifier
+			Character
+				.Expect(x => x.GetModifier(CONSTITUTION))
+				.Return(-1);
+
+			Assert.That(Character.EffectiveHitPoints, Is.EqualTo(Character.BaseHitPoints - 1)
+				, "Incorrect effective hit points with a negative modifier."
+			);
+
+			// test with a positive modifier
+			Character
+				.Expect(x => x.GetModifier(CONSTITUTION))
+				.Return(1);
+
+			Assert.That(Character.EffectiveHitPoints, Is.EqualTo(Character.BaseHitPoints + 1)
+				, "Incorrect effective hit points with a positive modifier."
 			);
 		}
 	}

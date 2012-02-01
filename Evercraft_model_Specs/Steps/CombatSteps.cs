@@ -33,7 +33,7 @@ namespace Evercraft_model_Specs.Steps {
 
 		[Given(@"the defender has (\d+) hit point")]
 		public void Given_the_defender_has_specific_hit_points(int hitPoints) {
-			Combat.Character2.HitPoints = hitPoints;
+			Combat.Character2.BaseHitPoints = hitPoints;
 		}
 
 		[When(@"the attacker rolls a (\d+)")]
@@ -70,10 +70,10 @@ namespace Evercraft_model_Specs.Steps {
 		
 		[Then(@"the defender takes (\d+) points of damage")]
 		public void Then_the_defender_takes_damage(int damage) {
-			var hitPointsBefore = GetContext<int>("DefenderHitPointsBeforeAttack");
-			var hitPointsAfter = Combat.Character2.HitPoints;
+			var baseHP = Combat.Character2.BaseHitPoints;
+			var effectiveHP = Combat.Character2.EffectiveHitPoints;
 
-			Assert.That(hitPointsAfter, Is.EqualTo(hitPointsBefore - damage), "Hit points were not reduced");
+			Assert.That(effectiveHP, Is.EqualTo(baseHP - damage), "Hit points were not reduced");
 		}
 
 		[Then(@"the defender dies")]
@@ -82,8 +82,6 @@ namespace Evercraft_model_Specs.Steps {
 		}
 
 		private void RecordCombatResult(int attackRoll) {
-			SetContext("DefenderHitPointsBeforeAttack", Combat.Character2.HitPoints);
-
 			Combat.LastAttackResult = Combat.Character1.Attack(attackRoll, Combat.Character2);
 		}
 	}
