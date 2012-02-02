@@ -262,18 +262,18 @@ this.ScenarioSetup(scenarioInfo);
                     "ase armor class", ((string[])(null)));
 #line 83
 this.ScenarioSetup(scenarioInfo);
-#line 84
+#line 89
  testRunner.Given("I have created a new character");
-#line 85
+#line 90
  testRunner.Then("the Effective Armor Class equals the base Armor Class plus the Dexterity modifier" +
                     "");
-#line 87
+#line 92
  testRunner.Given("I have created a new character");
-#line 88
+#line 93
  testRunner.And("the Base Armor Class is 5");
-#line 89
+#line 94
  testRunner.And("the Dexterity modifier is 5");
-#line 90
+#line 95
  testRunner.Then("the Effective Armor Class should be 10");
 #line hidden
             this.ScenarioCleanup();
@@ -286,21 +286,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Effective Hit Points are calculated by adding the Constitution modifier to hi" +
                     "t points", ((string[])(null)));
-#line 93
-this.ScenarioSetup(scenarioInfo);
-#line 97
- testRunner.Given("I have created a new character");
 #line 98
+this.ScenarioSetup(scenarioInfo);
+#line 102
+ testRunner.Given("I have created a new character");
+#line 103
  testRunner.Then("the Effective Hit Points equal the base Hit Points plus the Constitution modifier" +
                     "");
-#line 100
- testRunner.Given("I have created a new character");
-#line 101
- testRunner.And("the Base Hit Points are 5");
-#line 102
- testRunner.And("the Constitution modifier is -5");
-#line 103
- testRunner.Then("the Effective Hit Points should be 1");
 #line 105
  testRunner.Given("I have created a new character");
 #line 106
@@ -308,8 +300,16 @@ this.ScenarioSetup(scenarioInfo);
 #line 107
  testRunner.And("the Constitution modifier is -5");
 #line 108
+ testRunner.Then("the Effective Hit Points should be 1");
+#line 110
+ testRunner.Given("I have created a new character");
+#line 111
+ testRunner.And("the Base Hit Points are 5");
+#line 112
+ testRunner.And("the Constitution modifier is -5");
+#line 113
  testRunner.And("the character has taken 1 points of damage");
-#line 109
+#line 114
  testRunner.Then("the Effective Hit Points should be 0");
 #line hidden
             this.ScenarioCleanup();

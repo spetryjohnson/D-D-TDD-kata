@@ -31,7 +31,7 @@ namespace Evercraft_model_Specs.Steps {
 			Character.BaseArmorClass = baseArmorClass;
 		}
 
-		[Given(@"the (.*) modifier is (-?\d+)")]
+		[Given(@"the (\w+) modifier is (-?\d+)")]
 		public void Given_a_specific_attribute_modifier(string attribute, int modifier) {
 			Character
 				.Stub(x => x.GetModifier(attribute.ToEnum<Attribute>()))
@@ -40,9 +40,7 @@ namespace Evercraft_model_Specs.Steps {
 		
 		[Given(@"the character has taken (\d+) points of damage")]
 		public void Given_the_character_has_taken_damage(int damageTaken) {
-			for (var i = 0; i < damageTaken; i++) {
-				Character.TakeDamage();
-			}
+			Character.TakeDamage(damageTaken);
 		}
 
 		[When(@"I name it ""(.*)""")]

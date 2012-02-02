@@ -70,18 +70,6 @@ namespace Evercraft_model {
 			SetAttribute(Attribute.Charisma, 10);
 		}
 
-		public bool Attack(int attackRoll, Character opponent) {
-			var success = (attackRoll == 1)
-				? false
-				: attackRoll >= opponent.EffectiveArmorClass;
-
-			if (success) {
-				opponent.TakeDamage(attackRoll == 20);
-			}
-
-			return success;
-		}
-
 		public virtual int GetModifier(Attribute attribute) {
 			var attrValue = GetAttribute(attribute);
 
@@ -101,10 +89,8 @@ namespace Evercraft_model {
 			Attributes[attribute] = value;
 		}
 
-		public void TakeDamage(bool isCriticalHit = false) {
-			var damageAmount = isCriticalHit ? 2 : 1;
-
-			DamageTaken += damageAmount;
+		public void TakeDamage(int damage) {
+			DamageTaken += damage;
 		}
 	}
 }

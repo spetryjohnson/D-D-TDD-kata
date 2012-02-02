@@ -81,6 +81,11 @@ Scenario: Character attributes have modifiers based upon their values
 
 
 Scenario: The Effective Armor Class is calculated by adding the Dexterity modifier to the base armor class
+	QUESTION: Not sure which of these two formats is preferable. The first is clearer, but 
+	leans heavily on the implementation to be effective and the steps aren't reusable. The
+	second reuses existing steps but its intent isn't as clear. (Does the scenario name provide
+	enough context to reveal the intent?)
+
 	Given I have created a new character
 	Then the Effective Armor Class equals the base Armor Class plus the Dexterity modifier
 

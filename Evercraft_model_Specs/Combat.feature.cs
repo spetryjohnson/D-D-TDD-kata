@@ -110,35 +110,77 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successful attacks cause 1 point of damage to the defender")]
-        public virtual void SuccessfulAttacksCause1PointOfDamageToTheDefender()
+        [NUnit.Framework.DescriptionAttribute("Successful attacks cause damage equal to 1 point plus attacker\'s Strength modifie" +
+            "r")]
+        public virtual void SuccessfulAttacksCauseDamageEqualTo1PointPlusAttackerSStrengthModifier()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful attacks cause 1 point of damage to the defender", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful attacks cause damage equal to 1 point plus attacker\'s Strength modifie" +
+                    "r", ((string[])(null)));
 #line 25
 this.ScenarioSetup(scenarioInfo);
 #line 26
  testRunner.Given("two Characters are ready for combat");
 #line 27
- testRunner.When("an attack is successful");
+ testRunner.And("the attacker\'s Strength modifier is 2");
 #line 28
+ testRunner.When("an attack is successful");
+#line 29
+ testRunner.Then("the defender takes 3 points of damage");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("A negative Strength modifier never reduces damage to less than 1 point")]
+        public virtual void ANegativeStrengthModifierNeverReducesDamageToLessThan1Point()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A negative Strength modifier never reduces damage to less than 1 point", ((string[])(null)));
+#line 32
+this.ScenarioSetup(scenarioInfo);
+#line 33
+ testRunner.Given("two Characters are ready for combat");
+#line 34
+ testRunner.And("the attacker\'s Strength modifier is -2");
+#line 35
+ testRunner.When("an attack is successful");
+#line 36
  testRunner.Then("the defender takes 1 points of damage");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Attacks that roll a natural 20 do double damage to the defender")]
-        public virtual void AttacksThatRollANatural20DoDoubleDamageToTheDefender()
+        [NUnit.Framework.DescriptionAttribute("Critical hits do double damage to the defender")]
+        public virtual void CriticalHitsDoDoubleDamageToTheDefender()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attacks that roll a natural 20 do double damage to the defender", ((string[])(null)));
-#line 31
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Critical hits do double damage to the defender", ((string[])(null)));
+#line 39
 this.ScenarioSetup(scenarioInfo);
-#line 32
+#line 40
  testRunner.Given("two Characters are ready for combat");
-#line 33
+#line 41
  testRunner.When("the attacker rolls a 20");
-#line 34
+#line 42
  testRunner.Then("the defender takes 2 points of damage");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Critical hits double the Strength modifier when calculating damage")]
+        public virtual void CriticalHitsDoubleTheStrengthModifierWhenCalculatingDamage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Critical hits double the Strength modifier when calculating damage", ((string[])(null)));
+#line 45
+this.ScenarioSetup(scenarioInfo);
+#line 46
+ testRunner.Given("two Characters are ready for combat");
+#line 47
+ testRunner.And("the attacker\'s Strength modifier is 2");
+#line 48
+ testRunner.When("the attacker rolls a 20");
+#line 49
+ testRunner.Then("the defender takes 6 points of damage");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -148,15 +190,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CharactersDieWhenTheirEffectiveHitPointsAreEqualToOrLessThanZero()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Characters die when their Effective Hit Points are equal to or less than zero", ((string[])(null)));
-#line 37
+#line 52
 this.ScenarioSetup(scenarioInfo);
-#line 38
+#line 53
  testRunner.Given("two Characters are ready for combat");
-#line 39
+#line 54
  testRunner.And("the defender has 1 hit point");
-#line 40
+#line 55
  testRunner.When("an attack is successful");
-#line 41
+#line 56
  testRunner.Then("the defender dies");
 #line hidden
             this.ScenarioCleanup();

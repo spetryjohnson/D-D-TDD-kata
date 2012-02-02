@@ -43,6 +43,8 @@
     <Compile Include="AlignmentEnum.cs" />
     <Compile Include="Attribute.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="AttackResult.cs" />
+    <Compile Include="Encounter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
