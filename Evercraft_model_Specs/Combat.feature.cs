@@ -93,17 +93,46 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Attacks fail when the attack roll is 1 regardless of opponents Armor Class")]
-        public virtual void AttacksFailWhenTheAttackRollIs1RegardlessOfOpponentsArmorClass()
+        [NUnit.Framework.DescriptionAttribute("The attacker\'s Strength modifier is added to the attack roll when calculating a s" +
+            "uccessful hit")]
+        public virtual void TheAttackerSStrengthModifierIsAddedToTheAttackRollWhenCalculatingASuccessfulHit()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attacks fail when the attack roll is 1 regardless of opponents Armor Class", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The attacker\'s Strength modifier is added to the attack roll when calculating a s" +
+                    "uccessful hit", ((string[])(null)));
 #line 19
 this.ScenarioSetup(scenarioInfo);
 #line 20
  testRunner.Given("two Characters are ready for combat");
 #line 21
- testRunner.When("the attacker rolls a 1 against an Armor Class of 0");
+ testRunner.And("the attacker\'s Strength modifier is 2");
 #line 22
+ testRunner.When("the attacker rolls a 12 against an Armor Class of 14");
+#line 23
+ testRunner.Then("the attack succeeds");
+#line 25
+ testRunner.Given("two Characters are ready for combat");
+#line 26
+ testRunner.And("the attacker\'s Strength modifier is -2");
+#line 27
+ testRunner.When("the attacker rolls a 15 against an Armor Class of 14");
+#line 28
+ testRunner.Then("the attack fails");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Attacks fail when the attack roll is 1 regardless of opponents Armor Class")]
+        public virtual void AttacksFailWhenTheAttackRollIs1RegardlessOfOpponentsArmorClass()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attacks fail when the attack roll is 1 regardless of opponents Armor Class", ((string[])(null)));
+#line 31
+this.ScenarioSetup(scenarioInfo);
+#line 32
+ testRunner.Given("two Characters are ready for combat");
+#line 33
+ testRunner.When("the attacker rolls a 1 against an Armor Class of 0");
+#line 34
  testRunner.Then("the attack fails");
 #line hidden
             this.ScenarioCleanup();
@@ -116,15 +145,15 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful attacks cause damage equal to 1 point plus attacker\'s Strength modifie" +
                     "r", ((string[])(null)));
-#line 25
+#line 37
 this.ScenarioSetup(scenarioInfo);
-#line 26
+#line 38
  testRunner.Given("two Characters are ready for combat");
-#line 27
+#line 39
  testRunner.And("the attacker\'s Strength modifier is 2");
-#line 28
+#line 40
  testRunner.When("an attack is successful");
-#line 29
+#line 41
  testRunner.Then("the defender takes 3 points of damage");
 #line hidden
             this.ScenarioCleanup();
@@ -135,15 +164,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ANegativeStrengthModifierNeverReducesDamageToLessThan1Point()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A negative Strength modifier never reduces damage to less than 1 point", ((string[])(null)));
-#line 32
+#line 44
 this.ScenarioSetup(scenarioInfo);
-#line 33
+#line 45
  testRunner.Given("two Characters are ready for combat");
-#line 34
+#line 46
  testRunner.And("the attacker\'s Strength modifier is -2");
-#line 35
+#line 47
  testRunner.When("an attack is successful");
-#line 36
+#line 48
  testRunner.Then("the defender takes 1 points of damage");
 #line hidden
             this.ScenarioCleanup();
@@ -154,13 +183,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CriticalHitsDoDoubleDamageToTheDefender()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Critical hits do double damage to the defender", ((string[])(null)));
-#line 39
+#line 51
 this.ScenarioSetup(scenarioInfo);
-#line 40
+#line 52
  testRunner.Given("two Characters are ready for combat");
-#line 41
+#line 53
  testRunner.When("the attacker rolls a 20");
-#line 42
+#line 54
  testRunner.Then("the defender takes 2 points of damage");
 #line hidden
             this.ScenarioCleanup();
@@ -171,15 +200,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CriticalHitsDoubleTheStrengthModifierWhenCalculatingDamage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Critical hits double the Strength modifier when calculating damage", ((string[])(null)));
-#line 45
+#line 57
 this.ScenarioSetup(scenarioInfo);
-#line 46
+#line 58
  testRunner.Given("two Characters are ready for combat");
-#line 47
+#line 59
  testRunner.And("the attacker\'s Strength modifier is 2");
-#line 48
+#line 60
  testRunner.When("the attacker rolls a 20");
-#line 49
+#line 61
  testRunner.Then("the defender takes 6 points of damage");
 #line hidden
             this.ScenarioCleanup();
@@ -190,15 +219,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CharactersDieWhenTheirEffectiveHitPointsAreEqualToOrLessThanZero()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Characters die when their Effective Hit Points are equal to or less than zero", ((string[])(null)));
-#line 52
+#line 64
 this.ScenarioSetup(scenarioInfo);
-#line 53
+#line 65
  testRunner.Given("two Characters are ready for combat");
-#line 54
+#line 66
  testRunner.And("the defender has 1 hit point");
-#line 55
+#line 67
  testRunner.When("an attack is successful");
-#line 56
+#line 68
  testRunner.Then("the defender dies");
 #line hidden
             this.ScenarioCleanup();

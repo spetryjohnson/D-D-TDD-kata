@@ -16,6 +16,18 @@ Scenario: Attacks succeed when the attack roll is greater than or equal to the o
 	Then the attack fails
 
 
+Scenario: The attacker's Strength modifier is added to the attack roll when calculating a successful hit
+	Given two Characters are ready for combat
+	And the attacker's Strength modifier is 2
+	When the attacker rolls a 12 against an Armor Class of 14
+	Then the attack succeeds
+
+	Given two Characters are ready for combat
+	And the attacker's Strength modifier is -2
+	When the attacker rolls a 15 against an Armor Class of 14
+	Then the attack fails
+
+
 Scenario: Attacks fail when the attack roll is 1 regardless of opponents Armor Class
 	Given two Characters are ready for combat
 	When the attacker rolls a 1 against an Armor Class of 0

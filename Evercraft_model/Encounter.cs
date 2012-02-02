@@ -18,7 +18,7 @@ namespace Evercraft_model {
 
 			var isCriticalHit = (attackRoll == 20);
 			var isCriticalMiss = (attackRoll == 1);
-			var attackDoesNotBeatArmor = (attackRoll < defender.EffectiveArmorClass);
+			var attackDoesNotBeatArmor = ((attackRoll + attacker.GetModifier(Attribute.Strength)) < defender.EffectiveArmorClass);
 
 			if (isCriticalMiss || attackDoesNotBeatArmor) {
 				return new AttackResult { AttackRoll = attackRoll.Value, Success = false };

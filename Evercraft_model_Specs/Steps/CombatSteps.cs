@@ -48,7 +48,8 @@ namespace Evercraft_model_Specs.Steps {
 		public void Given_the_attacker_has_a_specified_attribute_modifier(string attribute, int modifier) {
 			Combat.Attacker
 				.Stub(x => x.GetModifier(attribute.ToEnum<Attribute>()))
-				.Return(modifier);
+				.Return(modifier)
+				.Repeat.Any();
 		}
 
 		[When(@"the attacker rolls a (\d+)")]
@@ -67,9 +68,11 @@ namespace Evercraft_model_Specs.Steps {
 
 		[When(@"an attack is successful")]
 		public void When_an_attack_is_successful() {
-			var successfulAttackRoll = Combat.Defender.EffectiveArmorClass + 1;
+			var successfulAttackRoll = 19;	// HACK: high enough that it works for current scenarios, but not critical. Probably needs changed.
 
 			RecordCombatResult(successfulAttackRoll);
+
+			Assert.That(Combat.LastAttackResult.Success, Is.True, "Bad test setup: attack was not successful!");
 		}
 
 		[Then(@"the attack succeeds")]
