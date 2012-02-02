@@ -53,6 +53,8 @@ namespace Evercraft_model {
 			get { return BaseArmorClass + GetModifier(Attribute.Dexterity); }
 		}
 
+		public int ExperiencePoints { get; set; }
+
 		public bool IsDead {
 			get { return EffectiveHitPoints <= 0; }
 		}

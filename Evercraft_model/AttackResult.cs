@@ -7,5 +7,6 @@ namespace Evercraft_model {
 		public int AttackRoll { get; set; }
 		public bool Success { get; set; }
 		public int Damage { get; set; }
+		public int EarnedXP { get; set; }
 	}
 }

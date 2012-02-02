@@ -32,6 +32,11 @@ Scenario: Characters have an Armor Class
 	Then the Armor Class should be 10
 
 
+Scenario: Characters have Experience Points
+	Given I have created a new character
+	Then the Experience Points should be 0
+
+
 Scenario: Characters attributes have default values
 	Given I have created a new character
 	Then the Strength attribute should be 10

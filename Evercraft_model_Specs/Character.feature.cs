@@ -138,25 +138,40 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Characters attributes have default values")]
-        public virtual void CharactersAttributesHaveDefaultValues()
+        [NUnit.Framework.DescriptionAttribute("Characters have Experience Points")]
+        public virtual void CharactersHaveExperiencePoints()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Characters attributes have default values", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Characters have Experience Points", ((string[])(null)));
 #line 35
 this.ScenarioSetup(scenarioInfo);
 #line 36
  testRunner.Given("I have created a new character");
 #line 37
- testRunner.Then("the Strength attribute should be 10");
-#line 38
- testRunner.And("the Dexterity attribute should be 10");
-#line 39
- testRunner.And("the Constitution attribute should be 10");
+ testRunner.Then("the Experience Points should be 0");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Characters attributes have default values")]
+        public virtual void CharactersAttributesHaveDefaultValues()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Characters attributes have default values", ((string[])(null)));
 #line 40
- testRunner.And("the Wisdom attribute should be 10");
+this.ScenarioSetup(scenarioInfo);
 #line 41
- testRunner.And("the Intelligence attribute should be 10");
+ testRunner.Given("I have created a new character");
 #line 42
+ testRunner.Then("the Strength attribute should be 10");
+#line 43
+ testRunner.And("the Dexterity attribute should be 10");
+#line 44
+ testRunner.And("the Constitution attribute should be 10");
+#line 45
+ testRunner.And("the Wisdom attribute should be 10");
+#line 46
+ testRunner.And("the Intelligence attribute should be 10");
+#line 47
  testRunner.And("the Charisma attribute should be 10");
 #line hidden
             this.ScenarioCleanup();
@@ -167,17 +182,17 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CharacterAttributesCanBeModifiedFromTheirDefault()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Character attributes can be modified from their default", ((string[])(null)));
-#line 45
-this.ScenarioSetup(scenarioInfo);
-#line 46
- testRunner.Given("I have created a new character");
-#line 47
- testRunner.When("I give it a Strength attribute of 9");
-#line 48
- testRunner.And("I give it a Wisdom attribute of 11");
-#line 49
- testRunner.Then("the Strength attribute should be 9");
 #line 50
+this.ScenarioSetup(scenarioInfo);
+#line 51
+ testRunner.Given("I have created a new character");
+#line 52
+ testRunner.When("I give it a Strength attribute of 9");
+#line 53
+ testRunner.And("I give it a Wisdom attribute of 11");
+#line 54
+ testRunner.Then("the Strength attribute should be 9");
+#line 55
  testRunner.And("the Wisdom attribute should be 11");
 #line hidden
             this.ScenarioCleanup();
@@ -188,13 +203,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CharacterAttributesMustBeBetween1And20Inclusive()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Character attributes must be between 1 and 20, inclusive", ((string[])(null)));
-#line 53
+#line 58
 this.ScenarioSetup(scenarioInfo);
-#line 54
+#line 59
  testRunner.Given("I have created a new character");
-#line 55
+#line 60
  testRunner.Then("the system should not let me enter an attribute less than 1");
-#line 56
+#line 61
  testRunner.And("the system should not let me enter an attribute greater than 20");
 #line hidden
             this.ScenarioCleanup();
@@ -205,49 +220,49 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CharacterAttributesHaveModifiersBasedUponTheirValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Character attributes have modifiers based upon their values", ((string[])(null)));
-#line 59
-this.ScenarioSetup(scenarioInfo);
-#line 60
- testRunner.Given("I have created a new character");
-#line 61
- testRunner.Then("an attribute value of 1 should have a modifier of -5");
-#line 62
- testRunner.And("an attribute value of 2 should have a modifier of -4");
-#line 63
- testRunner.And("an attribute value of 3 should have a modifier of -4");
 #line 64
- testRunner.And("an attribute value of 4 should have a modifier of -3");
+this.ScenarioSetup(scenarioInfo);
 #line 65
- testRunner.And("an attribute value of 5 should have a modifier of -3");
+ testRunner.Given("I have created a new character");
 #line 66
- testRunner.And("an attribute value of 6 should have a modifier of -2");
+ testRunner.Then("an attribute value of 1 should have a modifier of -5");
 #line 67
- testRunner.And("an attribute value of 7 should have a modifier of -2");
+ testRunner.And("an attribute value of 2 should have a modifier of -4");
 #line 68
- testRunner.And("an attribute value of 8 should have a modifier of -1");
+ testRunner.And("an attribute value of 3 should have a modifier of -4");
 #line 69
- testRunner.And("an attribute value of 9 should have a modifier of -1");
+ testRunner.And("an attribute value of 4 should have a modifier of -3");
 #line 70
- testRunner.And("an attribute value of 10 should have a modifier of 0");
+ testRunner.And("an attribute value of 5 should have a modifier of -3");
 #line 71
- testRunner.And("an attribute value of 11 should have a modifier of 0");
+ testRunner.And("an attribute value of 6 should have a modifier of -2");
 #line 72
- testRunner.And("an attribute value of 12 should have a modifier of 1");
+ testRunner.And("an attribute value of 7 should have a modifier of -2");
 #line 73
- testRunner.And("an attribute value of 13 should have a modifier of 1");
+ testRunner.And("an attribute value of 8 should have a modifier of -1");
 #line 74
- testRunner.And("an attribute value of 14 should have a modifier of 2");
+ testRunner.And("an attribute value of 9 should have a modifier of -1");
 #line 75
- testRunner.And("an attribute value of 15 should have a modifier of 2");
+ testRunner.And("an attribute value of 10 should have a modifier of 0");
 #line 76
- testRunner.And("an attribute value of 16 should have a modifier of 3");
+ testRunner.And("an attribute value of 11 should have a modifier of 0");
 #line 77
- testRunner.And("an attribute value of 17 should have a modifier of 3");
+ testRunner.And("an attribute value of 12 should have a modifier of 1");
 #line 78
- testRunner.And("an attribute value of 18 should have a modifier of 4");
+ testRunner.And("an attribute value of 13 should have a modifier of 1");
 #line 79
- testRunner.And("an attribute value of 19 should have a modifier of 4");
+ testRunner.And("an attribute value of 14 should have a modifier of 2");
 #line 80
+ testRunner.And("an attribute value of 15 should have a modifier of 2");
+#line 81
+ testRunner.And("an attribute value of 16 should have a modifier of 3");
+#line 82
+ testRunner.And("an attribute value of 17 should have a modifier of 3");
+#line 83
+ testRunner.And("an attribute value of 18 should have a modifier of 4");
+#line 84
+ testRunner.And("an attribute value of 19 should have a modifier of 4");
+#line 85
  testRunner.And("an attribute value of 20 should have a modifier of 5");
 #line hidden
             this.ScenarioCleanup();
@@ -260,20 +275,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Effective Armor Class is calculated by adding the Dexterity modifier to the b" +
                     "ase armor class", ((string[])(null)));
-#line 83
+#line 88
 this.ScenarioSetup(scenarioInfo);
-#line 89
+#line 94
  testRunner.Given("I have created a new character");
-#line 90
+#line 95
  testRunner.Then("the Effective Armor Class equals the base Armor Class plus the Dexterity modifier" +
                     "");
-#line 92
+#line 97
  testRunner.Given("I have created a new character");
-#line 93
+#line 98
  testRunner.And("the Base Armor Class is 5");
-#line 94
+#line 99
  testRunner.And("the Dexterity modifier is 5");
-#line 95
+#line 100
  testRunner.Then("the Effective Armor Class should be 10");
 #line hidden
             this.ScenarioCleanup();
@@ -286,21 +301,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Effective Hit Points are calculated by adding the Constitution modifier to hi" +
                     "t points", ((string[])(null)));
-#line 98
-this.ScenarioSetup(scenarioInfo);
-#line 102
- testRunner.Given("I have created a new character");
 #line 103
+this.ScenarioSetup(scenarioInfo);
+#line 107
+ testRunner.Given("I have created a new character");
+#line 108
  testRunner.Then("the Effective Hit Points equal the base Hit Points plus the Constitution modifier" +
                     "");
-#line 105
- testRunner.Given("I have created a new character");
-#line 106
- testRunner.And("the Base Hit Points are 5");
-#line 107
- testRunner.And("the Constitution modifier is -5");
-#line 108
- testRunner.Then("the Effective Hit Points should be 1");
 #line 110
  testRunner.Given("I have created a new character");
 #line 111
@@ -308,8 +315,16 @@ this.ScenarioSetup(scenarioInfo);
 #line 112
  testRunner.And("the Constitution modifier is -5");
 #line 113
+ testRunner.Then("the Effective Hit Points should be 1");
+#line 115
+ testRunner.Given("I have created a new character");
+#line 116
+ testRunner.And("the Base Hit Points are 5");
+#line 117
+ testRunner.And("the Constitution modifier is -5");
+#line 118
  testRunner.And("the character has taken 1 points of damage");
-#line 114
+#line 119
  testRunner.Then("the Effective Hit Points should be 0");
 #line hidden
             this.ScenarioCleanup();

@@ -94,6 +94,11 @@ namespace Evercraft_model_Specs.Steps {
 		public void Then_the_defender_dies() {
 			Assert.That(Combat.Defender.IsDead, "Defender did not die");
 		}
+		
+		[Then(@"the attacker earns (\d+) Experience Points")]
+		public void Then_the_attacker_earns_experience_points(int earnedXP) {
+			Assert.That(Combat.LastAttackResult.EarnedXP, Is.EqualTo(earnedXP), "Incorrect XP earned");
+		}
 
 		private void RecordCombatResult(int attackRoll) {
 			Combat.LastAttackResult = Combat.Encounter.Attack(Combat.Attacker, Combat.Defender, attackRoll);

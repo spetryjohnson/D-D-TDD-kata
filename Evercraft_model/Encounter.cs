@@ -11,18 +11,26 @@ namespace Evercraft_model {
 	/// </summary>
 	public class Encounter {
 
+		const int XP_EARNED_FOR_SUCCESSFUL_ATTACK = 10;
+
 		public AttackResult Attack(Character attacker, Character defender, int? attackRoll = null) {
 			if (attackRoll == null) {
 				throw new NotImplementedException("Random dice roll not implemented; specify a roll");
 			}
+
+			var result = new AttackResult { AttackRoll = attackRoll.Value };
 
 			var isCriticalHit = (attackRoll == 20);
 			var isCriticalMiss = (attackRoll == 1);
 			var attackDoesNotBeatArmor = ((attackRoll + attacker.GetModifier(Attribute.Strength)) < defender.EffectiveArmorClass);
 
 			if (isCriticalMiss || attackDoesNotBeatArmor) {
-				return new AttackResult { AttackRoll = attackRoll.Value, Success = false };
+				result.Success = false;
+				return result;
 			}
+
+			result.Success = true;
+			result.EarnedXP = XP_EARNED_FOR_SUCCESSFUL_ATTACK;
 
 			var baseDamage = 1;
 			var damageTaken = baseDamage + attacker.GetModifier(Attribute.Strength);
@@ -34,9 +42,10 @@ namespace Evercraft_model {
 			if (damageTaken < 1)
 				damageTaken = 1;
 
+			result.Damage = damageTaken;
 			defender.TakeDamage(damageTaken);
 
-			return new AttackResult { AttackRoll = attackRoll.Value, Success = true, Damage = damageTaken };
+			return result;
 		}
 	}
 }

@@ -34,6 +34,12 @@ Scenario: Attacks fail when the attack roll is 1 regardless of opponents Armor C
 	Then the attack fails
 
 	
+Scenario: Successful attacks grant the attacker 10 experience points
+	Given two Characters are ready for combat
+	When an attack is successful
+	Then the attacker earns 10 Experience Points
+
+	
 Scenario: Successful attacks cause damage equal to 1 point plus attacker's Strength modifier
 	Given two Characters are ready for combat
 	And the attacker's Strength modifier is 2

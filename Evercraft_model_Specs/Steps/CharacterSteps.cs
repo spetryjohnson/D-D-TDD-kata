@@ -88,6 +88,11 @@ namespace Evercraft_model_Specs.Steps {
 			Assert.That(Character.EffectiveArmorClass, Is.EqualTo(armorClass));
 		}
 
+		[Then(@"the Experience Points should be (\d+)")]
+		public void Then_the_Experience_Points_should_be(int xp) {
+			Assert.That(Character.ExperiencePoints, Is.EqualTo(xp));
+		}
+
 		[Then(@"the (.*) attribute should be (\d+)")]
 		public void Then_the_given_attribute_should_be(string attribute, int value) {
 			var actualValue = Character.GetAttribute(attribute.ToEnum<Attribute>());
